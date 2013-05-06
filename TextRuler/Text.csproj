@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B29C912-8BDA-4260-A486-111BECCCC196}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextRuler</RootNamespace>
+    <AssemblyName>TextRuler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>new.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.0.30714, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_proj\spider\.trunk\source\dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvancedTextEditorControl\FontComboBoxControl\FontComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFind.Designer.cs">
+      <DependentUpon>dlgFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgFindAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgFindAll.designer.cs">
+      <DependentUpon>dlgFindAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SplashScreen.cs" />
+    <Compile Include="Dialogs\SplashScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SplashScreenForm.designer.cs">
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="encode\BlowFishCS.cs" />
+    <Compile Include="encode\Common.cs" />
+    <Compile Include="encode\FileUtils.cs" />
+    <Compile Include="ExtendedRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instance.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tree\Tree.cs" />
+    <Compile Include="tree\TreeManager.cs" />
+    <EmbeddedResource Include="Dialogs\dlgFindAll.resx">
+      <DependentUpon>dlgFindAll.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SplashScreenForm.resx">
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TextRulerControl\TextRuler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\dlgFind.resx">
+      <DependentUpon>dlgFind.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l_indent_pos_lower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l_indet_pos_upper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r_indent_pos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tab_pos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="шьп\1348630973_address-book-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="шьп\1348631049_stock_new-drawing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="шьп\1348631449_trash_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="шьп\1348633818_doc_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="шьп\1348634392_disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="new.ico" />
+    <Content Include="readme.txt" />
+    <Content Include="Resources\logo.JPG" />
+    <None Include="шьп\1350030293_br_down.png" />
+    <None Include="шьп\1350030289_br_up.png" />
+    <None Include="шьп\1350030178_Reload-05.png" />
+    <None Include="шьп\fon2.png" />
+    <None Include="шьп\фон.png" />
+    <None Include="шьп\1349810552_paste_16x16.gif" />
+    <None Include="шьп\1349810598_copy.gif" />
+    <None Include="шьп\1349204863__close.png" />
+    <None Include="шьп\close.png" />
+    <None Include="шьп\1349171372_application-search-result.png" />
+    <None Include="шьп\find.png" />
+    <None Include="шьп\1349125863_zoom.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
