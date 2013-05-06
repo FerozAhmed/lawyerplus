@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dataModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dataModelStoreContainer">
+          <EntitySet Name="data" EntityType="dataModel.Store.data" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="255" />
+          <Property Name="parent_id" Type="integer" />
+          <Property Name="parent_site_id" Type="nvarchar" MaxLength="255" />
+          <Property Name="name" Type="nvarchar" Nullable="false" />
+          <Property Name="data_text" Type="nvarchar" />
+          <Property Name="data_rtf" Type="nvarchar" />
+          <Property Name="position" Type="integer" Nullable="false" />
+          <Property Name="is_doc" Type="bit" />
+          <Property Name="is_loaded" Type="bit" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="dataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="data" EntityType="dataModel.data" />
+        </EntityContainer>
+        <EntityType Name="data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="site_id" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="parent_id" />
+          <Property Type="String" Name="parent_site_id" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="data_text" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="data_rtf" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="position" Nullable="false" />
+          <Property Type="Boolean" Name="is_doc" />
+          <Property Type="Boolean" Name="is_loaded" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dataModelStoreContainer" CdmEntityContainer="dataEntities">
+          <EntitySetMapping Name="data">
+            <EntityTypeMapping TypeName="dataModel.data">
+              <MappingFragment StoreEntitySet="data">
+                <ScalarProperty Name="is_loaded" ColumnName="is_loaded" />
+                <ScalarProperty Name="is_doc" ColumnName="is_doc" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="data_rtf" ColumnName="data_rtf" />
+                <ScalarProperty Name="data_text" ColumnName="data_text" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="parent_site_id" ColumnName="parent_site_id" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="datatree">
+        <EntityTypeShape EntityType="dataModel.data" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5783902994791656" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
